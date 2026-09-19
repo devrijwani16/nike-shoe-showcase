@@ -1,38 +1,352 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  background-color: #0b0c0e;
+  overflow-x: hidden;
+}
+
+/* Page Layout */
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #0b0d10;
+  overflow: hidden;
+}
+
+/* Terracotta Ambient Background Circles */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b94220 0%, #7c260f 100%);
+  filter: blur(1px);
+  z-index: 0;
+}
+
+.top-circle {
+  width: 320px;
+  height: 320px;
+  top: -60px;
+  right: 12%;
+}
+
+.bottom-circle {
+  width: 280px;
+  height: 280px;
+  bottom: -40px;
+  left: 12%;
+}
+
+/* Main Showcase Card Container */
+.showcase-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1040px;
+  background: #121316;
+  border-radius: 20px;
+  padding: 30px 48px 48px 48px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border: 1px solid #1e2025;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-item {
+  color: #888d95;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #ffffff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #191b20;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #6a6f79;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 12px;
+  width: 60px;
+}
+
+.cart-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff4b1f;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Content Split Grid */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Product Info */
+.sub-title {
+  color: #1e90ff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.product-title {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 800;
+  margin: 8px 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  color: #868c96;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 420px;
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.old-price {
+  color: #717782;
+  font-size: 18px;
+  text-decoration: line-through;
+}
+
+.current-price {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.add-cart-btn {
+  background: linear-gradient(135deg, #ff4c1a 0%, #e03200 100%);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.add-cart-btn:hover {
+  opacity: 0.92;
+}
+
+.add-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Shoe Visualizer Container */
+.shoe-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.radial-backdrop {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0e4c57 0%, #0b2229 65%, transparent 75%);
+  z-index: 1;
+}
+
+.shoe-image {
+  position: relative;
+  z-index: 2;
+  width: 115%;
+  transform: rotate(-22deg) translateX(-10px);
+  filter: drop-shadow(0px 20px 25px rgba(0, 0, 0, 0.65));
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hotspots */
+.hotspot-wrapper {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hotspot-point {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.hotspot-pulse {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  animation: pulse-ring 2s infinite ease-out;
+}
+
+.hotspot-wrapper:hover .hotspot-point {
+  transform: scale(1.2);
+  background: #ffffff;
+}
+
+.hotspot-tooltip {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 22, 27, 0.95);
+  border: 1px solid #333842;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 170px;
+  font-size: 11px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.hotspot-tooltip strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #1e90ff;
+}
+
+/* Review Badge */
+.reviews-container {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  z-index: 3;
+  text-align: right;
+}
+
+.stars {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
+  gap: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.star-icon {
+  color: #ffa500;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.rating-score {
+  color: #737882;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.review-count {
+  display: block;
+  color: #8c939e;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* Pulse Keyframes */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Responsive Scaling */
+@media (max-width: 860px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  .description {
+    margin: 0 auto 24px auto;
+  }
+  .price-tag {
+    justify-content: center;
+  }
+  .shoe-image {
+    width: 80%;
+    transform: rotate(-15deg);
+  }
+  .reviews-container {
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+  }
+  .stars {
+    justify-content: center;
   }
 }
