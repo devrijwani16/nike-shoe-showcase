@@ -70,7 +70,7 @@ export default function App() {
           {/* Left Column: Product Information */}
           <div className="product-details">
             <span className="sub-title">Nike Phantom</span>
-            <h1 className="product-title">GT2 Academy TF</h1>
+            <h1 className="product-title">GT2 Academy </h1>
             <p className="description">
               Building on the Phantom GT, the Nike Phantom GT2 TF has an updated design 
               and patterning that are engineered to help you place your shots with pinpoint accuracy. 
