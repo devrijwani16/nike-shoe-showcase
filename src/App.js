@@ -34,7 +34,7 @@ export default function App() {
           </div>
 
           <nav className="nav-links">
-            {['New Release!', 'Man', 'Woman', 'Kids', 'Sale'].map((tab) => (
+            {['New Release!', 'Man', 'W', 'Kids', 'Sale'].map((tab) => (
               <span
                 key={tab}
                 className={`nav-item ${activeTab === tab ? 'active' : ''}`}
