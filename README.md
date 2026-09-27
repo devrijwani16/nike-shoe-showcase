@@ -1,5 +1,4 @@
-## render webpage working : 
-## (https://nike-shoe-showcase.onrender.com)
+## Render webpage working : (https://nike-shoe-showcase.onrender.com)
 
 # Getting Started with Create React App
 
