@@ -31,6 +31,10 @@ jobs:
           ## Open the render -> settings -> deploy hook-> copy url 
           ## Open github -> settings -> secrets and variables -> actions -> new repository secret -> add the url as RENDER_DEPLOY_HOOK_URL
 
+# error when you push your file
+
+# git pull origin main --rebase
+# git push origin main
 
 
 
